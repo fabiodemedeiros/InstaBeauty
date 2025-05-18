@@ -12,38 +12,51 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const csvPath = path.resolve(process.cwd(), "attached_assets/estudio inara.csv");
       const fileContent = fs.readFileSync(csvPath, "utf8");
       
-      // Parse CSV manually
-      const rows = fileContent.split("\n");
+      // Definição das colunas esperadas
+      const expectedColumns = ["Nome", "Duração (min)", "Preço", "Profissional responsável", "Categoria", "Ativo/Inativo", "Descrição"];
       
-      // Map CSV headers to expected property names
-      const headerMap: Record<string, keyof Service> = {
-        "Nome": "nome",
-        "Duração (min)": "duracao",
-        "Preço": "preco",
-        "Profissional responsável": "profissional", 
-        "Categoria": "categoria",
-        "Ativo/Inativo": "ativo",
-        "Descrição": "descricao"
-      };
+      // Dividir o arquivo em linhas
+      const rows = fileContent.split('\n');
       
+      // Processar serviços
       const services: Service[] = [];
       
-      // Start from row 1 (skipping headers) and exclude empty rows
+      // Pular o cabeçalho e processar as linhas de dados
       for (let i = 1; i < rows.length; i++) {
-        if (rows[i].trim() === "") continue;
+        const line = rows[i].trim();
+        if (line === '') continue;
         
-        // Simple CSV parsing (assumes no commas in data fields)
-        const rowValues = rows[i].split(',');
+        // Extrair os campos
+        let fields: string[] = [];
+        let currentValue = '';
+        let insideQuotes = false;
         
-        if (rowValues.length >= 7) {
-          const service: any = {
-            nome: rowValues[0].trim(),
-            duracao: rowValues[1].trim(),
-            preco: rowValues[2].trim().replace('"', '').replace('"', ''),
-            profissional: rowValues[3].trim(),
-            categoria: rowValues[4].trim(),
-            ativo: rowValues[5].trim(),
-            descricao: rowValues[6].trim().replace('"', '').replace('"', '')
+        for (let j = 0; j < line.length; j++) {
+          const char = line[j];
+          
+          if (char === '"') {
+            insideQuotes = !insideQuotes;
+          } else if (char === ',' && !insideQuotes) {
+            fields.push(currentValue);
+            currentValue = '';
+          } else {
+            currentValue += char;
+          }
+        }
+        
+        // Adicionar o último campo
+        fields.push(currentValue);
+        
+        // Verificar se temos todos os campos necessários
+        if (fields.length >= 7) {
+          const service: Service = {
+            nome: fields[0].trim(),
+            duracao: fields[1].trim(),
+            preco: fields[2].trim().replace(/"/g, ''),
+            profissional: fields[3].trim(),
+            categoria: fields[4].trim(),
+            ativo: fields[5].trim(),
+            descricao: fields[6].trim().replace(/"/g, '')
           };
           
           services.push(service);
