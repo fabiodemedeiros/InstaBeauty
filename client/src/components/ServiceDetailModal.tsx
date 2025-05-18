@@ -19,9 +19,107 @@ export default function ServiceDetailModal({ service, isOpen, onClose }: Service
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };
 
-  const benefits = getBenefits(service.categoria, service.nome);
-  const emoji = getServiceEmoji(service.categoria, service.nome);
-  const imageUrl = getServiceImage(service.categoria, service.nome);
+  // Função para obter emoji para a categoria do serviço
+  const getEmoji = () => {
+    switch (service.categoria) {
+      case 'Mãos e Pés': return '💅';
+      case 'Estética Facial': return '✨';
+      case 'Depilação': return '✂️';
+      case 'Cabelos': return '💇‍♀️';
+      case 'Maquiagem': return '💄';
+      case 'Bem-estar': return '💆‍♀️';
+      case 'Corporal': return '🧖‍♀️';
+      default: return '✨';
+    }
+  };
+
+  // Função para obter imagem para a categoria do serviço
+  const getImage = () => {
+    switch (service.categoria) {
+      case 'Mãos e Pés':
+        return 'https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800';
+      case 'Estética Facial':
+        return 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800';
+      case 'Depilação':
+        return 'https://images.unsplash.com/photo-1625441896755-6814c030367c?q=80&w=800';
+      case 'Cabelos':
+        return 'https://images.unsplash.com/photo-1560869713-2cc18de5a456?q=80&w=800';
+      case 'Maquiagem':
+        return 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800';
+      case 'Bem-estar':
+        return 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800';
+      case 'Corporal':
+        return 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800';
+      default:
+        return 'https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800';
+    }
+  };
+
+  // Função para obter benefícios para a categoria do serviço
+  const getBenefits = () => {
+    switch (service.categoria) {
+      case 'Mãos e Pés':
+        return [
+          'Aparência renovada e bem cuidada',
+          'Hidratação intensiva',
+          'Remoção de cutículas com segurança',
+          'Bem-estar instantâneo'
+        ];
+      case 'Estética Facial':
+        return [
+          'Pele mais radiante e saudável',
+          'Redução de imperfeições',
+          'Revitalização facial completa',
+          'Relaxamento e bem-estar'
+        ];
+      case 'Depilação':
+        return [
+          'Pele lisa por mais tempo',
+          'Processo com menor desconforto',
+          'Redução gradativa dos pelos',
+          'Higiene e frescor prolongados'
+        ];
+      case 'Cabelos':
+        return [
+          'Cabelos mais saudáveis e brilhantes',
+          'Corte personalizado ao seu estilo',
+          'Tratamento específico para seu tipo de cabelo',
+          'Aparência renovada e moderna'
+        ];
+      case 'Maquiagem':
+        return [
+          'Produtos de alta qualidade',
+          'Técnicas profissionais exclusivas',
+          'Valorização dos seus traços naturais',
+          'Durabilidade garantida'
+        ];
+      case 'Bem-estar':
+        return [
+          'Alívio de tensões e estresse',
+          'Relaxamento profundo',
+          'Melhora da circulação',
+          'Sensação de renovação e bem-estar'
+        ];
+      case 'Corporal':
+        return [
+          'Pele mais hidratada e renovada',
+          'Relaxamento muscular',
+          'Sensação de leveza',
+          'Bem-estar por todo o corpo'
+        ];
+      default:
+        return [
+          'Atendimento personalizado',
+          'Profissionais experientes',
+          'Produtos de alta qualidade',
+          'Experiência completa de bem-estar'
+        ];
+    }
+  };
+  
+  const emoji = getEmoji();
+  const imageUrl = getImage();
+  const benefits = getBenefits();
 
   return (
     <AnimatePresence>
