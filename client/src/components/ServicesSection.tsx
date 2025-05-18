@@ -60,7 +60,11 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
 
   const filteredServices = activeCategory === "all" 
     ? services 
-    : services?.filter(service => service.categoria === activeCategory) || [];
+    : services?.filter(service => {
+        const normalizedServiceCategory = service.categoria?.trim();
+        const normalizedActiveCategory = activeCategory?.trim();
+        return normalizedServiceCategory === normalizedActiveCategory;
+      }) || [];
 
   const visibleServices = filteredServices.slice(0, visibleCount);
 
