@@ -1,0 +1,31 @@
+Nome,Duração (min),Preço,Profissional responsável,Categoria,Ativo/Inativo,Descrição
+Manicure,30,"30,00",Camila Duarte,Mãos e Pés,Ativo,"Corte, lixamento e esmaltação das unhas das mãos."
+Pedicure,40,"35,00",Camila Duarte,Mãos e Pés,Ativo,Cuidado completo dos pés com hidratação e esmaltação.
+Unha em Gel,90,"90,00",Isabela Nogueira,Mãos e Pés,Ativo,Aplicação de unhas em gel para maior durabilidade.
+Design de sobrancelhas,30,"40,00",Isabela Nogueira,Estética Facial,Ativo,Modelagem personalizada das sobrancelhas.
+Depilação facial,20,"35,00",Isabela Nogueira,Depilação,Ativo,Remoção de pelos do rosto com cera quente.
+Depilação axilas,20,"25,00",Isabela Nogueira,Depilação,Ativo,Depilação com cera quente na região das axilas.
+Depilação meia perna,30,"45,00",Isabela Nogueira,Depilação,Ativo,Depilação da parte inferior das pernas.
+Depilação perna inteira,45,"65,00",Isabela Nogueira,Depilação,Ativo,Depilação completa das pernas com cera quente.
+Limpeza de pele,60,"80,00",Isabela Nogueira,Estética Facial,Ativo,Limpeza profunda da pele com extração de cravos.
+Hidratação facial,40,"60,00",Isabela Nogueira,Estética Facial,Ativo,Tratamento de hidratação profunda da pele facial.
+Corte feminino,60,"70,00",Camila Duarte,Cabelos,Ativo,Corte de cabelo feminino personalizado.
+Corte masculino,40,"50,00",Camila Duarte,Cabelos,Ativo,Corte de cabelo masculino com máquina e tesoura.
+Escova modeladora,50,"60,00",Camila Duarte,Cabelos,Ativo,Escovação com modelagem de pontas.
+Progressiva,120,"180,00",Camila Duarte,Cabelos,Ativo,Alisamento dos fios com redução de volume.
+Coloração,90,"150,00",Camila Duarte,Cabelos,Ativo,Coloração permanente com produtos profissionais.
+Luzes,150,"250,00",Camila Duarte,Cabelos,Ativo,Técnica de clareamento parcial dos fios com papel.
+Botox Capilar,90,"120,00",Camila Duarte,Cabelos,Ativo,Tratamento reconstrutor que alinha os fios.
+Maquiagem social,60,"90,00",Isabela Nogueira,Maquiagem,Ativo,Maquiagem para eventos diurnos e noturnos.
+Sobrancelha com henna,40,"45,00",Isabela Nogueira,Estética Facial,Ativo,Design de sobrancelha com aplicação de henna.
+Massagem relaxante,60,"100,00",Isabela Nogueira,Bem-estar,Ativo,Massagem corporal para alívio do estresse e tensão.
+Peeling de Diamante,45,"110,00",Isabela Nogueira,Estética Facial,Ativo,Esfoliação profunda da pele que promove renovação celular.
+Spa dos Pés,50,"65,00",Camila Duarte,Mãos e Pés,Ativo,"Tratamento relaxante com esfoliação, máscara e hidratação dos pés."
+Banho de Lua,60,"85,00",Isabela Nogueira,Corporal,Ativo,Clareamento de pelos corporais com hidratação da pele.
+Drenagem Linfática,60,"120,00",Isabela Nogueira,Bem-estar,Ativo,Massagem suave que estimula o sistema linfático e reduz inchaços.
+Cauterização Capilar,90,"130,00",Camila Duarte,Cabelos,Ativo,Tratamento profundo que reconstrói a fibra capilar danificada.
+Maquiagem para Noiva,90,"250,00",Isabela Nogueira,Maquiagem,Ativo,Maquiagem personalizada para o grande dia com alta fixação.
+Sobrancelha Fio a Fio,50,"80,00",Isabela Nogueira,Estética Facial,Ativo,Técnica de preenchimento de sobrancelhas com efeito natural.
+Selagem Térmica,120,"170,00",Camila Duarte,Cabelos,Ativo,Tratamento para redução de frizz e brilho intenso aos fios.
+Hidratação Capilar Profunda,45,"70,00",Camila Duarte,Cabelos,Ativo,Reposição de nutrientes essenciais para cabelos secos e quebradiços.
+Penteado Festa,90,"140,00",Camila Duarte,Cabelos,Ativo,Criação de penteado elaborado para festas e eventos especiais.
