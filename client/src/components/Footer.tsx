@@ -26,7 +26,7 @@ export default function Footer() {
                 <Facebook size={20} />
               </a>
               <a 
-                href={`https://wa.me/${5500000000000}`} 
+                href={`https://wa.me/5547364482870`} 
                 className="text-white/80 hover:text-white transition-colors"
                 aria-label="WhatsApp"
                 target="_blank"

@@ -114,7 +114,7 @@ export default function ContactSection() {
                     <Facebook size={18} />
                   </a>
                   <a 
-                    href={`https://wa.me/554736448287`} 
+                    href={`https://wa.me/5547364482870`} 
                     className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-accent hover:bg-primary hover:text-white transition-colors"
                     aria-label="WhatsApp"
                     target="_blank"
