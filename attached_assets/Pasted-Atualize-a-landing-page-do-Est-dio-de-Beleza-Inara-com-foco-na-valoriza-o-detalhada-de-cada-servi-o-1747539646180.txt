@@ -1,0 +1,74 @@
+Atualize a landing page do Estúdio de Beleza Inara com foco na valorização detalhada de cada serviço. O objetivo é fazer com que, ao clicar em um serviço na seção “Serviços”, o visitante veja uma modal elegante ou uma página de detalhe com animação suave, que apresente:
+
+🧴 Exigências por Serviço (Componente Detalhado):
+Para cada serviço listado na planilha (ex: Manicure, Pedicure, Unha em Gel etc.), exiba:
+
+📌 Estrutura do card expandido:
+Imagem representativa do serviço (pode usar banco Unsplash/Pexels/Freepik).
+
+Título (nome do serviço).
+
+Categoria (ex: Mãos e Pés).
+
+Descrição detalhada e humanizada do serviço (ver exemplo abaixo).
+
+Benefícios principais em bullet points.
+
+Duração (em minutos) e preço formatado (R$ 00,00).
+
+Profissional responsável com nome em destaque.
+
+Botão CTA: Agendar esse serviço (que abre o WhatsApp com mensagem automática pré-preenchida).
+
+🧠 Linguagem Persuasiva – Exemplo detalhado:
+💅 Manicure
+Descrição humanizada:
+Cuidar das mãos é mais que estética: é autoestima. Nossa manicure profissional começa com um cuidado suave das cutículas, seguido por lixamento, hidratação e esmaltação com acabamento impecável.
+
+Benefícios:
+
+Unhas alinhadas e saudáveis
+
+Esmaltação duradoura com brilho profissional
+
+Hidratação que combate o ressecamento
+
+Sensação imediata de bem-estar
+
+Duração: 30 minutos
+
+Preço: R$ 30,00
+
+Profissional responsável: Camila Duarte
+
+✨ Requisitos de implementação:
+Cada serviço deve abrir como:
+
+Modal central animada (com Framer Motion) ou
+
+Página separada com transição suave
+
+Deve permitir fácil navegação de volta para a landing principal
+
+Design com espaçamento adequado, texto legível e visual refinado
+
+Adicione ícone temático próximo ao nome do serviço (ex: 💅 para Manicure)
+
+🔗 Integração com WhatsApp:
+O botão “Agendar esse serviço” deve:
+
+Abrir o WhatsApp com a mensagem preenchida:
+"Olá, gostaria de agendar um horário para o serviço [NOME DO SERVIÇO] com a profissional [NOME DA PROFISSIONAL]. Pode me informar a disponibilidade?"
+
+📦 Extras opcionais:
+Galeria de fotos do serviço (2 ou 3 imagens por serviço)
+
+Avaliações de clientes (mockup)
+
+Tag “+ Procurado” para serviços com maior destaque
+
+🧩 Dados disponíveis:
+Os serviços listados já têm:
+
+Nome, duração, preço, profissional, categoria, descrição
+
