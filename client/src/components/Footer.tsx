@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="py-12 bg-accent text-white">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div>
             <h3 className="font-display text-xl font-semibold mb-4">Estúdio Inara</h3>
             <p className="text-white/80 text-sm mb-6">
@@ -26,7 +26,7 @@ export default function Footer() {
                 <Facebook size={20} />
               </a>
               <a 
-                href={`https://wa.me/5547364482870`} 
+                href="https://wa.me/5500000000000" 
                 className="text-white/80 hover:text-white transition-colors"
                 aria-label="WhatsApp"
                 target="_blank"
@@ -60,7 +60,6 @@ export default function Footer() {
               <li><a href="#agendamento" className="text-white/80 hover:text-white transition-colors">Agendamento</a></li>
               <li><a href="#contato" className="text-white/80 hover:text-white transition-colors">Contato</a></li>
             </ul>
-          </div>
           </div>
 
           <div>
