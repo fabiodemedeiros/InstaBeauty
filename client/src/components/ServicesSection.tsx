@@ -59,7 +59,6 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
           </p>
         </div>
 
-        {/* Category filters */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map(category => (
             <button
@@ -77,7 +76,6 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
           ))}
         </div>
 
-        {/* Services grid */}
         {services.length > 0 ? (
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -117,10 +115,8 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
                   </div>
                 );
               })}
-              ))}
             </div>
 
-            {/* View more button */}
             {visibleCount < filteredServices.length && (
               <div className="text-center mt-12">
                 <Button
