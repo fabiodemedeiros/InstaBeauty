@@ -38,6 +38,12 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
   const handleCategoryClick = (category: string) => {
     setActiveCategory(category);
     setVisibleCount(6); // Reset visible count on category change
+    
+    // Scroll to services section smoothly
+    const servicesSection = document.getElementById('servicos');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const handleViewMore = () => {
@@ -54,7 +60,7 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
 
   const filteredServices = activeCategory === "all" 
     ? services 
-    : services.filter(service => service.categoria === activeCategory);
+    : services?.filter(service => service.categoria === activeCategory) || [];
 
   const visibleServices = filteredServices.slice(0, visibleCount);
 
