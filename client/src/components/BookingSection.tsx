@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { CalendarIcon } from "lucide-react";
 
 export default function BookingSection() {
-  const whatsappNumber = "5500000000000"; // Replace with the actual number
+  const whatsappNumber = "554736448287"; // Estúdio Inara WhatsApp number
   const prefilledMessage = encodeURIComponent("Olá! Gostaria de agendar um horário no Estúdio Inara");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${prefilledMessage}`;
 
