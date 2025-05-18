@@ -61,16 +61,6 @@ export default function Footer() {
               <li><a href="#contato" className="text-white/80 hover:text-white transition-colors">Contato</a></li>
             </ul>
           </div>
-
-          <div>
-            <h3 className="font-medium mb-4">Serviços</h3>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#servicos" className="text-white/80 hover:text-white transition-colors">Mãos e Pés</a></li>
-              <li><a href="#servicos" className="text-white/80 hover:text-white transition-colors">Estética Facial</a></li>
-              <li><a href="#servicos" className="text-white/80 hover:text-white transition-colors">Depilação</a></li>
-              <li><a href="#servicos" className="text-white/80 hover:text-white transition-colors">Cabelos</a></li>
-              <li><a href="#servicos" className="text-white/80 hover:text-white transition-colors">Bem-estar</a></li>
-            </ul>
           </div>
 
           <div>
