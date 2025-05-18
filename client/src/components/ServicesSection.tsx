@@ -22,6 +22,7 @@ interface ServicesSectionProps {
 export default function ServicesSection({ services }: ServicesSectionProps) {
   const [activeCategory, setActiveCategory] = useState("all");
   const [visibleCount, setVisibleCount] = useState(6);
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
 
   const categories = [
     { id: "all", name: "Todos", icon: null },
@@ -41,6 +42,14 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
 
   const handleViewMore = () => {
     setVisibleCount(prev => prev + 6);
+  };
+
+  const openServiceDetail = (service: Service) => {
+    setSelectedService(service);
+  };
+
+  const closeServiceDetail = () => {
+    setSelectedService(null);
   };
 
   const filteredServices = activeCategory === "all" 
@@ -79,42 +88,34 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
         {services.length > 0 ? (
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {visibleServices.map((service, index) => {
-                const [isModalOpen, setIsModalOpen] = useState(false);
-                return (
-                  <div key={index}>
-                    <div 
-                      className="service-card bg-secondary rounded-xl overflow-hidden shadow-md hover:shadow-lg cursor-pointer"
-                      onClick={() => setIsModalOpen(true)}
-                    >
-                      <div className="p-6">
-                        <div className="flex justify-between items-start mb-4">
-                          <h3 className="font-display text-xl font-semibold">{service.nome}</h3>
-                          <span className="bg-primary text-accent text-sm font-medium px-3 py-1 rounded-full">
-                            R$ {service.preco}
-                          </span>
-                        </div>
-                        <p className="text-neutral-900/70 mb-4 text-sm">{service.descricao}</p>
-                        <div className="flex justify-between items-center text-sm text-neutral-900/60">
-                          <span className="flex items-center gap-1">
-                            <Clock size={16} />
-                            {service.duracao} min
-                          </span>
-                          <span className="flex items-center gap-1">
-                            <UserRound size={16} />
-                            {service.profissional}
-                          </span>
-                        </div>
+              {visibleServices.map((service, index) => (
+                <div key={index}>
+                  <div 
+                    className="service-card bg-secondary rounded-xl overflow-hidden shadow-md hover:shadow-lg cursor-pointer"
+                    onClick={() => openServiceDetail(service)}
+                  >
+                    <div className="p-6">
+                      <div className="flex justify-between items-start mb-4">
+                        <h3 className="font-display text-xl font-semibold">{service.nome}</h3>
+                        <span className="bg-primary text-accent text-sm font-medium px-3 py-1 rounded-full">
+                          R$ {service.preco}
+                        </span>
+                      </div>
+                      <p className="text-neutral-900/70 mb-4 text-sm">{service.descricao}</p>
+                      <div className="flex justify-between items-center text-sm text-neutral-900/60">
+                        <span className="flex items-center gap-1">
+                          <Clock size={16} />
+                          {service.duracao} min
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <UserRound size={16} />
+                          {service.profissional}
+                        </span>
                       </div>
                     </div>
-                    <ServiceDetailModal
-                      service={service}
-                      isOpen={isModalOpen}
-                      onClose={() => setIsModalOpen(false)}
-                    />
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
 
             {visibleCount < filteredServices.length && (
@@ -135,6 +136,14 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
           </div>
         )}
       </div>
+
+      {selectedService && (
+        <ServiceDetailModal
+          service={selectedService}
+          isOpen={!!selectedService}
+          onClose={closeServiceDetail}
+        />
+      )}
     </section>
   );
 }
