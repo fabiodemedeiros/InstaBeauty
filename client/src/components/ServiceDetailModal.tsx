@@ -12,7 +12,7 @@ interface ServiceDetailModalProps {
 
 export default function ServiceDetailModal({ service, isOpen, onClose }: ServiceDetailModalProps) {
   const handleWhatsAppBooking = () => {
-    const phoneNumber = "5500000000000"; // Substitua pelo número real
+    const phoneNumber = "554736448287"; // Estúdio Inara WhatsApp number
     const message = encodeURIComponent(
       `Olá, gostaria de agendar um horário para o serviço ${service.nome} com a profissional ${service.profissional}. Pode me informar a disponibilidade?`
     );
