@@ -3,13 +3,13 @@ export default function ProfessionalsSection() {
     {
       name: "Camila Duarte",
       specialty: "Especialista em Cabelos e Mãos e Pés",
-      image: "https://pixabay.com/get/g217de6c477fc2ea22bba8c880f7e0ee6c127aaea0c5d42569a7899b49dc44c791f159bd66c2e080092c68548452a060236b8f6747ce80052d720ed06cd4521b6_1280.jpg",
+      image: "https://images.unsplash.com/photo-1567894340315-735fa3686c90?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
       skills: ["Cortes", "Coloração", "Manicure", "Pedicure"]
     },
     {
       name: "Isabela Nogueira",
       specialty: "Especialista em Estética, Depilação e Bem-estar",
-      image: "https://images.unsplash.com/photo-1595908129746-57ca1a63dd4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
       skills: ["Unhas em Gel", "Sobrancelhas", "Depilação", "Massagens"]
     }
   ];
