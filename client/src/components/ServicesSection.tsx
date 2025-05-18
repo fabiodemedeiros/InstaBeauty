@@ -1,3 +1,6 @@
+
+import ServiceDetailModal from "./ServiceDetailModal";
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { 
@@ -78,31 +81,42 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
         {services.length > 0 ? (
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {visibleServices.map((service, index) => (
-                <div 
-                  key={index} 
-                  className="service-card bg-secondary rounded-xl overflow-hidden shadow-md hover:shadow-lg"
-                >
-                  <div className="p-6">
-                    <div className="flex justify-between items-start mb-4">
-                      <h3 className="font-display text-xl font-semibold">{service.nome}</h3>
-                      <span className="bg-primary text-accent text-sm font-medium px-3 py-1 rounded-full">
-                        R$ {service.preco}
-                      </span>
+              {visibleServices.map((service, index) => {
+                const [isModalOpen, setIsModalOpen] = useState(false);
+                return (
+                  <div key={index}>
+                    <div 
+                      className="service-card bg-secondary rounded-xl overflow-hidden shadow-md hover:shadow-lg cursor-pointer"
+                      onClick={() => setIsModalOpen(true)}
+                    >
+                      <div className="p-6">
+                        <div className="flex justify-between items-start mb-4">
+                          <h3 className="font-display text-xl font-semibold">{service.nome}</h3>
+                          <span className="bg-primary text-accent text-sm font-medium px-3 py-1 rounded-full">
+                            R$ {service.preco}
+                          </span>
+                        </div>
+                        <p className="text-neutral-900/70 mb-4 text-sm">{service.descricao}</p>
+                        <div className="flex justify-between items-center text-sm text-neutral-900/60">
+                          <span className="flex items-center gap-1">
+                            <Clock size={16} />
+                            {service.duracao} min
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <UserRound size={16} />
+                            {service.profissional}
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-neutral-900/70 mb-4 text-sm">{service.descricao}</p>
-                    <div className="flex justify-between items-center text-sm text-neutral-900/60">
-                      <span className="flex items-center gap-1">
-                        <Clock size={16} />
-                        {service.duracao} min
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <UserRound size={16} />
-                        {service.profissional}
-                      </span>
-                    </div>
+                    <ServiceDetailModal
+                      service={service}
+                      isOpen={isModalOpen}
+                      onClose={() => setIsModalOpen(false)}
+                    />
                   </div>
-                </div>
+                );
+              })}
               ))}
             </div>
 
