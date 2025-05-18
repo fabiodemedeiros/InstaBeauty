@@ -27,7 +27,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`fixed w-full ${isScrolled ? 'bg-white/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'} transition-all duration-300 z-50`}>
+    <header className={`fixed w-full ${isScrolled ? 'bg-white/90 backdrop-blur-sm shadow-sm' : 'bg-white'} transition-all duration-300 z-50`}>
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <a href="#inicio" className="text-accent font-display font-semibold text-2xl md:text-3xl">
           Estúdio Inara
